@@ -17,13 +17,11 @@ Rails.application.routes.draw do
     delete "/posts/:id" => "posts#destroy"
 
     get "/conversations" => "conversations#index"
-    # post "/conversations" => "conversations#create"
-    # get "/conversations/:id" => "conversations#show"
-    # delete "/conversations/:id" => "conversations#destroy"
+    post "/conversations" => "conversations#create" 
+    get "/conversations/:id" => "conversations#show" 
+    delete "/conversations/:id" => "conversations#destroy"
 
-    # get "/messages" => "messages#index"
     # post "/messages" => "messages#create"
-    # get "/messages/:id" => "messages#show"
     # delete "/messages/:id" => "messages#destroy"
   end
 end
