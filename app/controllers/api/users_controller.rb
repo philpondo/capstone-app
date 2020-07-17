@@ -50,6 +50,7 @@ class Api::UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    @user.conversations.destroy_all
     @user.destroy
     render json: { message: "User has successfully been removed"}
   end
