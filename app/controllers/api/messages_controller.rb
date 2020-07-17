@@ -6,7 +6,7 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(
       text: params[:text],
       user_id: current_user.id,
-      post_id: params[:post_id]
+      conversation_id: params[:conversation_id]
     )
     if @message.save
       render json: { message: "Message sent!" }, status: :created

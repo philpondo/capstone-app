@@ -27,8 +27,8 @@ class Api::PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
     if @post.user_id == current_user.id
-      @post = Post.find(params[:id])
       @post.title = params[:title] || @post.title
       @post.content = params[:content] || @post.content
       @post.players_needed = params[:players_needed] || @post.players_needed
@@ -41,8 +41,8 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
     if @post.user_id == current_user.id
-      @post = Post.find(params[:id])
       @post.destroy
       render json: { message: "Post has successfully been removed"}
     end
