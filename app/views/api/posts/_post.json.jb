@@ -3,5 +3,8 @@
   title: post.title,
   content: post.content,
   players_needed: post.players_needed,
-  user_id: post.user_id
+  user_id: post.user_id,
+  user_name: post.user.name,
+  user_rank: post.user.rank,
+  user_playstyle: post.user.playstyle
 }

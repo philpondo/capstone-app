@@ -40,18 +40,24 @@ class Api::UsersController < ApplicationController
       end
       @user.rank = params[:rank] || @user.rank
       @user.playstyle = params[:playstyle] || @user.playstyle
-    end
-    if @user.save
-      render 'show.json.jb'
+      if @user.save
+        render 'show.json.jb'
+      else
+        render json: { errors: @user.errors.full_messages}, status: :unprocessable_entity
+      end
     else
-      render json: { errors: @user.errors.full_messages}, status: :unprocessable_entity
+      render json: { error: "Unauthorized user"}, status: :forbidden
     end
   end
 
   def destroy
     @user = User.find(params[:id])
-    @user.conversations.destroy_all
-    @user.destroy
-    render json: { message: "User has successfully been removed"}
+    if @user == current_user
+      @user.conversations.destroy_all
+      @user.destroy
+      render json: { message: "User has successfully been removed"}
+    else
+      render json: { error: "Unauthorized user"}, status: :forbidden
+    end
   end
 end
