@@ -3,5 +3,6 @@
   sender_id: conversation.sender_id,
   recipient_id: conversation.recipient_id,
   post: conversation.post_id,
-  last_message: conversation.messages.last
+  last_message: conversation.messages.last,
+  # last_message_created: conversation.messages.last.created_at
 }
