@@ -3,5 +3,6 @@
   name: user.name,
   email: user.email,
   rank: user.rank,
-  playstyle: user.playstyle
+  playstyle: user.playstyle,
+  image: user.image
 }

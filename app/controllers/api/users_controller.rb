@@ -13,13 +13,16 @@ class Api::UsersController < ApplicationController
   end
 
   def create
+    response = Cloudinary::Uploader.upload(params[:image])
+    cloudinary_url = response["secure_url"]
     @user = User.create(
       name: params[:name],
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
       rank: params[:rank],
-      playstyle: params[:playstyle]
+      playstyle: params[:playstyle],
+      image: cloudinary_url
     )
     if @user.save
       render json: { message: "User created successfully"}, status: :created
