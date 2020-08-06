@@ -43,6 +43,10 @@ class Api::UsersController < ApplicationController
       end
       @user.rank = params[:rank] || @user.rank
       @user.playstyle = params[:playstyle] || @user.playstyle
+      if params[:image]
+        response = Cloudinary::Uploader.upload(params[:image])
+        @user.image = response["secure_url"]
+      end
       if @user.save
         render 'show.json.jb'
       else
