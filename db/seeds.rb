@@ -1,23 +1,12 @@
-Post.create!([
-  {title: "Tryouts", content: "Looking for 2 immortal ranks to play in a tournament next month, holding tryouts", players_needed: 2, user_id: 1},
-  {title: "Hello noob here!!!", content: "Looking for some ppl to learn the game with! I can play any agent since i have not gotten to get used to anyone yet", players_needed: 4, user_id: 10},
-  {title: "New PC gamer looking for Valorant friends", content: "Hi guys, I just recently bought my first gaming PC after 12 years of Xbox gaming. Been playing alot of Valorant and I love the game. I don't have a lot of friends to climb ranks with tho. If you're around my skill level hit me up and we can get some games in!", players_needed: 4, user_id: 9},
-  {title: "New to tactical shooters", content: "Never played tactical shooters but i have noticed that you really need good teamplay to do well in this game. I am not the best at this game by any means, but its tough to do anything when your team doesn't have any comms. Any players around Silver pls hit me up.", players_needed: 4, user_id: 11},
-  {title: "New to the game, no PC gamer friends", content: "I'm trying out this game after years of LoL. Figured it would be more fun if I had some friends to game with. If you're new as well and want to squad up, message me!", players_needed: 4, user_id: 6},
-  {title: "Sage needed desperately", content: "3 friends and I are looking for a 5th that will play sage. We can play multiple characters each but all of us suck at playing Sage. If you're around plat rank and play Sage pls let me know", players_needed: 1, user_id: 2},
-  {title: "Ready to 5-stack!", content: "hi! I am a streamer that played CS:GO for 7 years prior to switching to Valorant when the beta dropped. I got to Radiant through solo q-ing, but I can't handle it anymore. All of my friends are back to CS except for one now :( if you're immortal or radiant and want to get some games in let me know!", players_needed: 3, user_id: 5},
-  {title: "High Plat or Diamond still needed!", content: "Still could use 1 more to fill out our team. We picked up someone off of this site and so far so good! Someone who can play Sage would be great because we're running with 3 duelists right now lol", players_needed: 1, user_id: 1},
-  {title: "High Plat or Diamond players needed!", content: "Looking for 2 plat or diamond ranks to play ranked. We play almost every night just for fun, but have been on a losing streak lately because of bad communication with random teammates. If you wanna have a full team to play with consistently, send me a message. We can work with any agents y'all prefer.", players_needed: 1, user_id: 8}
+Conversation.create!([
+  {sender_id: 5, recipient_id: 1, post_id: 5},
+  {sender_id: 6, recipient_id: 10, post_id: 6},
+  {sender_id: 3, recipient_id: 10, post_id: 6},
+  {sender_id: 4, recipient_id: 10, post_id: 6},
+  {sender_id: 2, recipient_id: 8, post_id: 14},
+  {sender_id: 4, recipient_id: 8, post_id: 14},
+  {sender_id: 7, recipient_id: 8, post_id: 14}
 ])
-# Conversation.create!([
-#   {sender_id: 7, recipient_id: 6, post_id: 5},
-#   {sender_id: 8, recipient_id: 9, post_id: 6},
-#   {sender_id: 16, recipient_id: 9, post_id: 6},
-#   {sender_id: 18, recipient_id: 9, post_id: 6},
-#   {sender_id: 2, recipient_id: 1, post_id: 17},
-#   {sender_id: 18, recipient_id: 1, post_id: 17},
-#   {sender_id: 19, recipient_id: 1, post_id: 17}
-# ])
 # Message.create!([
 #   {text: "Can i tryout? I play Jett Phoenix and Breach and am radiant rank", user_id: 7, conversation_id: 4},
 #   {text: "um yes lol can you play at 7pm est? and whats ur riot ID", user_id: 6, conversation_id: 4},
@@ -47,4 +36,3 @@ Post.create!([
 #   {text: "hi", user_id: 1, conversation_id: 46},
 #   {text: "hi ", user_id: 1, conversation_id: 47}
 # ])
-
