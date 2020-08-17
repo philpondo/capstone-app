@@ -23,5 +23,7 @@ Rails.application.routes.draw do
 
     post "/messages" => "messages#create"
     delete "/messages/:id" => "messages#destroy"
+
+    get "/*path" => proc { [200, {}, [ActionView::Base.new.render(file: 'public/index.html')]] }
   end
 end
